@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+data = {
+    "Школа №1": 350,
+    "Школа №2": 270,
+    "Школа №3": 400,
+    "Училище №1": 150,
+    "Училище №2": 180,
+}
+
+# Обчислення загальної кількості учнів
+total_students = sum(data.values())
+
+# Обчислення відсотків для кожного закладу
+percentages = [count / total_students * 100 for count in data.values()]
+
+# Побудова кругової діаграми
+plt.figure(figsize=(8, 8))
+plt.pie(percentages, labels=data.keys(), autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+plt.title("Розподіл учнів між школами та училищами")
+plt.show()

@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Визначаємо функцію Y(x)
+x = np.linspace(0.1, 10, 500)  # Починаємо з 0.1, щоб уникнути ділення на 0
+y = -5 * np.cos(10 * x) * np.sin(3 * x) / (x ** 0.5)
+
+# Побудова графіка
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, linestyle='-', color='blue', linewidth=2, label='Y(x) = -5*cos(10x)*sin(3x)/sqrt(x)')
+
+# Налаштування графіка
+plt.title("Графік функції Y(x)", fontsize=16)
+plt.xlabel("x", fontsize=14)
+plt.ylabel("Y(x)", fontsize=14)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend(fontsize=12)
+plt.tight_layout()
+
+# Виведення графіка
+plt.show()
